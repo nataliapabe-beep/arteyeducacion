@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arte que transforma | ODS 4 & Artes Plásticas</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Elementos Flotantes de Fondo -->
+<div class="floating-bg">
+  <div class="float-item">🎨</div>
+  <div class="float-item">🖌️</div>
+  <div class="float-item">⭐</div>
+  <div class="float-item">✏️</div>
+</div>
+
+<header>
+  <div class="hero">
+    <span class="badge">AGENDA 2030 · ODS 4</span>
+    <h1>El Arte que nos Transforma</h1>
+    <p>¡Una aventura colorida para aprender, crear y descubrir el poder de la educación y el arte!</p>
+    <button class="btn" onclick="document.getElementById('ods').scrollIntoView({behavior:'smooth'})">¡Comenzar la Aventura! ↓</button>
+  </div>
+</header>
+
+<section id="ods">
+  <!-- Personaje Interactiva -->
+  <div class="character-box" onclick="hablarMascota()">
+    <div class="char-avatar">🖌️</div>
+    <div class="char-bubble" id="charBubble">
+      ¡Hola! Soy Pincelín. Tócame para darte consejos creativos y datos divertidos sobre el arte.
+    </div>
+  </div>
+
+  <h2 class="section-title">¿Qué es el ODS 4?</h2>
+  <p class="section-sub">Busca garantizar una educación inclusiva, equitativa y de calidad promoviendo oportunidades para todas y todos.</p>
+  <div class="ods">
+    <div class="card">
+      <div class="ods-number">04</div>
+      <h2>Educación y Futuro</h2>
+      <p>Desarrolla conocimientos, pensamiento crítico y herramientas para participar activamente en la transformación de la sociedad.</p>
+    </div>
+    <div class="card pink">
+      <h2>El Papel del Arte</h2>
+      <p>Las artes plásticas permiten aprender mediante la experimentación, expresar ideas complejas y valorar distintas culturas.</p>
+      <div style="margin-top: 15px;">
+        <span class="pill" style="background: var(--naranja)">Creatividad</span>
+        <span class="pill" style="background: var(--azul)">Inclusión</span>
+        <span class="pill" style="background: var(--magenta)">Expresión</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEZCLADOR DE PIGMENTOS -->
+<section style="background: #fdfbf7;">
+  <h2 class="section-title">🧪 Mezclador Teórico de Pigmentos</h2>
+  <p class="section-sub">Simulador de mezcla sustractiva. Selecciona dos colores base para calcular su resultado cromático.</p>
+  <div class="mixer-container">
+    <div class="color-select">
+      <label><strong>Pigmento A:</strong></label>
+      <select id="colorA" onchange="calcularMezcla()">
+        <option value="amarillo">Amarillo Cadmio</option>
+        <option value="azul">Azul Ultramar</option>
+        <option value="rojo">Rojo Magenta</option>
+        <option value="blanco">Blanco de Titanio</option>
+      </select>
+      <label><strong>Pigmento B:</strong></label>
+      <select id="colorB" onchange="calcularMezcla()">
+        <option value="azul">Azul Ultramar</option>
+        <option value="amarillo">Amarillo Cadmio</option>
+        <option value="rojo">Rojo Magenta</option>
+        <option value="blanco">Blanco de Titanio</option>
+      </select>
+      <button class="btn btn-verde" onclick="calcularMezcla()">Calcular Mezcla</button>
+    </div>
+    <div id="mixBox" class="mix-result-box" style="background: #4A90E2;">
+      <h3 id="mixName">Verde Botella</h3>
+      <p id="mixInfo">Resultado de la suma sustractiva primaria.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GENERADOR ALEATORIO -->
+<section>
+  <h2 class="section-title">🎲 Generador Aleatorio de Proyectos</h2>
+  <p class="section-sub">¿Bloqueo creativo? Obtén una consigna aleatoria combinando técnicas, temas sociales y paletas.</p>
+  <div class="generator-box">
+    <button class="btn" onclick="generarIdeaAleatoria()">¡Generar Consigna Creativa!</button>
+    <div id="promptOutput" class="prompt-result">
+      Haz clic arriba para generar tu primera idea.
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINAS ARTÍSTICAS -->
+<section style="background: #fdfbf7;">
+  <h2 class="section-title">Disciplinas Artísticas</h2>
+  <p class="section-sub">Toca cada tarjeta para conocer su aportación al aprendizaje.</p>
+  <div class="art-grid">
+    <div class="card art-card" onclick="toggleCard(this)">
+      <div class="art-icon">🎨</div><h3>Pintura</h3>
+      <p>Color y forma.</p><p class="extra">Favorece la observación profunda y la comunicación visual sin palabras.</p>
+    </div>
+    <div class="card art-card" onclick="toggleCard(this)">
+      <div class="art-icon">🪵</div><h3>Grabado</h3>
+      <p>Procesos y matrices.</p><p class="extra">Enseña la planificación en pasos y la reproducción múltiple de imágenes.</p>
+    </div>
+    <div class="card art-card" onclick="toggleCard(this)">
+      <div class="art-icon">🗿</div><h3>Escultura</h3>
+      <p>Espacio y volumen.</p><p class="extra">Desarrolla la percepción tridimensional, la textura y el equilibrio.</p>
+    </div>
+    <div class="card art-card" onclick="toggleCard(this)">
+      <div class="art-icon">✏️</div><h3>Dibujo</h3>
+      <p>Trazos y líneas.</p><p class="extra">Fortalece la atención al detalle, la motricidad fina y la síntesis de ideas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORAMA -->
+<section>
+  <h2 class="section-title">🧠 Memorama de la Educación Inclusiva</h2>
+  <p class="section-sub">Encuentra las parejas de símbolos relacionados con el arte y la educación.</p>
+  <div class="game-container">
+    <div class="game-top">
+      <div class="stat">Intentos: <span id="moves">0</span></div>
+      <div class="stat">Parejas: <span id="pairs">0</span>/8</div>
+      <button class="btn btn-alt" style="margin:0; padding:8px 15px;" onclick="startGame()">Reiniciar</button>
+    </div>
+    <div id="memory" class="memory"></div>
+    <div id="win" class="win">
+      <h3 style="color: var(--verde); margin-bottom: 10px;">¡Excelente trabajo! 🎉</h3>
+      <p style="margin-bottom: 15px;">Completaste el memorama. ¡El aprendizaje creativo es divertido!</p>
+      <button class="btn" onclick="startGame()">Jugar otra vez</button>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMENDACIONES CULTURALES -->
+<section style="background: #fdfbf7;">
+  <h2 class="section-title">🎬 Recomendaciones para Niños y Jóvenes</h2>
+  <p class="section-sub">Libros y películas geniales para inspirarte y aprender más sobre el mundo del arte.</p>
+  <div class="recs-grid">
+    <div class="rec-card">
+      <h3>🎬 Películas Inspiradoras</h3>
+      <ul class="rec-list">
+        <li><strong>Loving Vincent:</strong> Una impresionante película hecha totalmente con pinturas al óleo en movimiento sobre Van Gogh.</li>
+        <li><strong>Soul (Pixar):</strong> Una hermosa historia sobre la pasión, la creatividad y lo que nos hace únicos.</li>
+        <li><strong>Le Tableau (El Lienzo):</strong> Una película animada sobre los personajes que viven dentro de un cuadro inacabado.</li>
+      </ul>
+    </div>
+    <div class="rec-card">
+      <h3>📚 Libros Recomendados</h3>
+      <ul class="rec-list">
+        <li><strong>El Punto (Peter H. Reynolds):</strong> Una historia inspiradora sobre cómo cualquier persona puede empezar a crear arte.</li>
+        <li><strong>La Línea (Paul Klee para niños):</strong> Un libro divertido que enseña cómo una línea puede salir a pasear y convertirse en dibujo.</li>
+        <li><strong>El Arte con Mis Manos:</strong> Guía práctica para experimentar con escultura, pintura y grabado en casa.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LIENZO CREATIVO -->
+<section>
+  <h2 class="section-title">🖌️ Lienzo Digital Interactivo</h2>
+  <p class="section-sub">Dibuja libremente tus ideas usando los colores de la paleta.</p>
+  <div class="canvas-area">
+    <div class="color-picker" id="colorPicker"></div>
+    <canvas id="dibujoCanvas" width="550" height="300"></canvas>
+    <br><br>
+    <button class="btn btn-alt" onclick="clearCanvas()">Borrar Pizarra</button>
+  </div>
+</section>
+
+<!-- REFERENCIAS -->
+<section>
+  <h2 class="section-title">📚 Referencias Bibliográficas</h2>
+  <p class="section-sub">Fundamentos teóricos del proyecto.</p>
+  <div class="ref-box">
+    <ul>
+      <li><strong>Naciones Unidas (UN).</strong> (2015). <em>Agenda 2030 para el Desarrollo Sostenible</em>. Objetivo 4: Educación de Calidad.</li>
+      <li><strong>UNESCO.</strong> (2006). <em>Hoja de Ruta para la Educación Artística</em>. Conferencia Mundial sobre Educación Artística, Lisboa.</li>
+      <li><strong>Kandinsky, V.</strong> (1912). <em>De lo espiritual en el arte</em>. Editorial Barral.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Arte que transforma · ODS 4</strong></p>
+  <p>Programación para Artistas I</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
